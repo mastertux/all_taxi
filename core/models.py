@@ -12,6 +12,6 @@ class User(AbstractUser):
 
     client = models.ForeignKey(
         TaxiClient,
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
