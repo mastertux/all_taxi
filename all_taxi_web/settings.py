@@ -38,6 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashboard',
+    'taxi_car',
+    'taxi_client',
+    'taxi_company',
+    'taxi_travel',
+    'taxi_driver',
+    'core',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +83,13 @@ WSGI_APPLICATION = 'all_taxi_web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'all_taxi',
+        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '', # 8000 is default
     }
 }
 
@@ -128,4 +140,6 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = (os.path.join(BASE_DIR,'media'))
 MEDIA_URL = '/media/'
+
+AUTH_USER_MODEL = 'core.User'
 
